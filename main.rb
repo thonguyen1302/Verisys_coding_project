@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+# Import libraries
 require 'csv'
 require 'json'
 
