@@ -48,8 +48,12 @@ def csv_to_json(file_path='data/healthprofessionals.csv')
 	# Unique data
 	data.uniq! {|d| d['License number']}
 
-	# Return JSON
-	JSON.pretty_generate(data)
+	# Write JSON file
+	File.open("output.json","w") do |f|
+	  f.write(JSON.pretty_generate(data))
+	end
+	
 end
 
-puts csv_to_json()
+# Call function
+csv_to_json()
